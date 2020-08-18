@@ -1,0 +1,12 @@
+<form #myform="ngForm" class="example-form" (ngSubmit)="onSubmit()">
+  <div class="form-group row">
+    <label for="amount">Amount</label>
+    <input type="text" name="amount" #amount="ngModel" [(ngModel)]="exchange.amount" required />
+  </div>
+  <div class="form-group row">
+    <label for="type">Type</label>
+    <input type="radio" name="type" value="BUY" #name="ngModel" [(ngModel)]="exchange.type" required>
+    <input type="radio" name="type" value="SALE" #name="ngModel" [(ngModel)]="exchange.type" required>
+  </div>
+  <button type="submit" [disabled]="myform.invalid" color="primary">Exchange amount</button>
+</form>
